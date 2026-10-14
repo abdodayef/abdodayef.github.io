@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdelmonim Dayef — Data &amp; Industrial Consultant</title>
+<meta name="description" content="Portfolio of Abdelmonim Dayef, Data & Industrial Consultant specialized in data governance, data quality, data engineering and AI governance for industrial environments.">
+<style>
+  :root{
+    --navy:#0052CC; --navy-dark:#062A66; --navy-deep:#02193F; --teal:#0FB5A6; --teal-hi:#2DD9C9;
+    --ink:#0E1626; --body:#33405A; --muted:#5B6472; --line:#E2E8F2; --bg:#F6F8FB; --card:#FFFFFF;
+    --teal-soft:#E4F6F3; --navy-soft:#E8F0FE; --mono:'Consolas','SFMono-Regular',Menlo,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;color:var(--body);background:var(--bg);line-height:1.65}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  a{color:var(--navy);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3,h4{color:var(--ink);line-height:1.25}
+
+  /* ===== HERO with live data network background ===== */
+  header{position:relative;overflow:hidden;background:linear-gradient(150deg,var(--navy-deep) 0%,var(--navy-dark) 45%,#004BB8 100%);color:#fff;padding:84px 0 96px}
+  #net{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
+  .hero-grid-lines{position:absolute;inset:0;opacity:.06;
+    background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
+    background-size:56px 56px;pointer-events:none}
+  .hero-inner{position:relative;z-index:2}
+  .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(15,181,166,.16);border:1px solid rgba(45,217,201,.45);color:var(--teal-hi);border-radius:999px;padding:6px 16px;font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+  .kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--teal-hi);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+  header h1{font-size:3.1rem;line-height:1.08;margin:20px 0 8px;font-weight:800;color:#fff}
+  header .tagline{font-size:1.3rem;color:#BFD7FF;font-weight:600}
+  header .location{margin-top:8px;color:#8FB4EE;font-size:.95rem}
+  .hero-contact{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-size:.95rem}
+  .hero-contact a{color:#DDE9FF}
+  .btn{display:inline-block;margin-top:30px;background:var(--teal);color:#fff;font-weight:700;padding:13px 26px;border-radius:10px;box-shadow:0 6px 20px rgba(15,181,166,.4);transition:transform .15s}
+  .btn:hover{background:#0CA394;text-decoration:none;transform:translateY(-2px)}
+  .btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.4);box-shadow:none;margin-left:12px}
+  .btn.ghost:hover{background:rgba(255,255,255,.08)}
+
+  /* ===== Stats bar ===== */
+  .stats{position:relative;z-index:5;margin-top:-42px}
+  .stats-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 40px rgba(2,25,63,.12);overflow:hidden}
+  .stat{padding:26px 22px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat .num{font-size:1.9rem;font-weight:800;color:var(--navy);font-family:var(--mono)}
+  .stat .num em{color:var(--teal);font-style:normal}
+  .stat .lbl{font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+
+  /* ===== Sections ===== */
+  section{padding:64px 0}
+  section.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+  h2{font-size:1.7rem}
+  h2 .accent{color:var(--navy)}
+  .sec-tag{font-family:var(--mono);font-size:.75rem;color:var(--teal);background:var(--teal-soft);border-radius:6px;padding:4px 10px;letter-spacing:.06em}
+  .lead{color:var(--muted);max-width:780px;margin-bottom:30px}
+
+  /* ===== Mission cards (data-oriented) ===== */
+  .missions{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .mission{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s}
+  .mission:hover{box-shadow:0 10px 34px rgba(2,25,63,.10);transform:translateY(-3px)}
+  .mission::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--navy),var(--teal))}
+  .mission .m-id{font-family:var(--mono);font-size:.72rem;color:var(--teal);letter-spacing:.1em;text-transform:uppercase}
+  .mission h3{font-size:1.13rem;margin:8px 0 2px}
+  .mission .ctx{font-size:.83rem;color:var(--muted);margin-bottom:12px}
+  .mission ul{margin-left:16px;font-size:.9rem;color:#3A4351}
+  .mission li{margin-bottom:6px}
+  .mission li::marker{color:var(--teal)}
+  .mission .tools{margin-top:12px}
+  .chip{display:inline-block;background:var(--navy-soft);color:var(--navy);border-radius:6px;padding:3px 10px;font-size:.75rem;font-weight:600;margin:0 5px 5px 0;font-family:var(--mono)}
+
+  /* ===== Timeline ===== */
+  .xp{border-left:3px solid var(--line);padding-left:26px;margin-left:8px}
+  .xp-item{position:relative;padding-bottom:32px}
+  .xp-item::before{content:'';position:absolute;left:-33.5px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--teal);border:3px solid var(--bg)}
+  .xp-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px;align-items:baseline}
+  .xp-head h3{font-size:1.12rem}
+  .xp-head .org{color:var(--navy);font-weight:700}
+  .when{color:var(--muted);font-size:.85rem;white-space:nowrap}
+  .xp-item ul{margin:10px 0 0 18px;font-size:.93rem;color:#3A4351}
+  .xp-item li{margin-bottom:5px}
+  .xp-item li::marker{color:var(--navy)}
+
+  /* ===== Skills ===== */
+  .skillrow{display:grid;grid-template-columns:250px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .skillrow:last-child{border-bottom:none}
+  .skillrow .name{font-weight:700;color:var(--navy-dark)}
+  @media(max-width:640px){.skillrow{grid-template-columns:1fr}}
+
+  /* ===== Education grid ===== */
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .card h3{font-size:1.02rem;margin-bottom:8px}
+  .card p{font-size:.9rem;color:var(--muted)}
+
+  footer{background:var(--ink);color:#8FA0BC;padding:36px 0;font-size:.88rem;text-align:center}
+  footer a{color:#BFD7FF}
+</style>
+</head>
+<body>
+
+<header>
+  <canvas id="net"></canvas>
+  <div class="hero-grid-lines"></div>
+  <div class="wrap hero-inner">
+    <span class="kicker"><span class="dot"></span> Data Governance · Quality · Engineering · AI</span>
+    <h1>Abdelmonim Dayef</h1>
+    <div class="tagline">Data &amp; Industrial Consultant | Automation Engineer</div>
+    <div class="location">Casablanca, Morocco — missions for OCP Group (JPH · IROC · RDP · CDP)</div>
+    <div class="hero-contact">
+      <a href="mailto:dayef-dayef@hotmail.com">dayef-dayef@hotmail.com</a>
+      <a href="tel:+212639662397">+212 6 39 66 23 97</a>
+      <a href="https://www.linkedin.com/in/abdelmonim-dayef-214902239" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <a class="btn" href="https://base44.app/api/apps/6a3950dfdb9d19d0b53ede47/files/mp/public/6a3950dfdb9d19d0b53ede47/f592656f8_CV_Dayef_MiddleEast_EN.docx">Download CV</a>
+    <a class="btn ghost" href="mailto:dayef-dayef@hotmail.com">Get in touch</a>
+  </div>
+</header>
+
+<div class="stats wrap">
+  <div class="stats-card">
+    <div class="stat"><div class="num">2<em>+</em></div><div class="lbl">Years consulting for OCP</div></div>
+    <div class="stat"><div class="num">6</div><div class="lbl">Mission domains</div></div>
+    <div class="stat"><div class="num">4</div><div class="lbl">Programs — JPH · IROC · RDP · CDP</div></div>
+    <div class="stat"><div class="num">3</div><div class="lbl">Languages — AR · FR · EN</div></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>Mission <span class="accent">domains</span></h2><span class="sec-tag">// akumen_ia.by_valyans</span></div>
+    <p class="lead">Consultant at <strong>AKUMENIA (Akumen IA by Valyans)</strong> for the OCP Group — all six domains below delivered as hands-on missions.</p>
+    <div class="missions">
+
+      <div class="mission">
+        <div class="m-id">m.01 · Projet Data Gov JPH</div>
+        <h3>Data Governance</h3>
+        <div class="ctx">Custom framework design for an industrial business unit</div>
+        <ul>
+          <li>Designed a custom governance framework and Data Quality program — KPI definition and monitoring to measure, control and optimize data value.</li>
+          <li>Ran MCD architecture workshops, Data Gov benchmarks and strategic roadmaps (Manufacturing SBU Data).</li>
+          <li>Led POCs and tool selection for cataloging, lineage and governance.</li>
+          <li>Led end-to-end creation of a business KPI dictionary (IROC NUTRICROPS), aligning business definitions with data logic.</li>
+          <li>Mapped industrial data flows and data-asset catalogs; defined quality policies, ingestion rules and security standards.</li>
+        </ul>
+        <div class="tools"><span class="chip">Collibra</span><span class="chip">Data Galaxy</span><span class="chip">MCD</span></div>
+      </div>
+
+      <div class="mission">
+        <div class="m-id">m.02 · SBU IROC</div>
+        <h3>Data Quality &amp; Monitoring</h3>
+        <div class="ctx">Reliability of algorithms and dashboards in production</div>
+        <ul>
+          <li>Built monitoring indicators supervising production algorithms and preventing data drift / concept drift over time.</li>
+          <li>Reliability audits of industrial dashboards (PiVision): data-collision detection, correction of faulty formulas and KPIs generating false insights.</li>
+          <li>Created industrial dashboards in Tableau and Power BI for operational steering.</li>
+          <li>Deployed Quality (Planning) dashboards for platform-health monitoring and proactive detection of ingestion anomalies.</li>
+        </ul>
+        <div class="tools"><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">PiVision</span></div>
+      </div>
+
+      <div class="mission">
+        <div class="m-id">m.03 · Projet RDP</div>
+        <h3>Data Engineering &amp; Architecture</h3>
+        <div class="ctx">Complex flows, integration and high availability</div>
+        <ul>
+          <li>Implemented and secured complex data flows; deployed advanced technical workarounds to guarantee high availability of the data platform.</li>
+          <li>Integrated third-party sources (weather APIs) with robust API scripts and linting to secure data exchanges (ETA project).</li>
+          <li>Audited and selected external data providers — technical robustness and ROI evaluation.</li>
+          <li>Built a predictive ETA model and operations-research modules for logistics optimization.</li>
+          <li>Monitored production data jobs end-to-end, guaranteeing flow integrity and freshness.</li>
+        </ul>
+        <div class="tools"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">APIs</span></div>
+      </div>
+
+      <div class="mission">
+        <div class="m-id">m.04 · Projet CDP</div>
+        <h3>AI Governance &amp; Risk</h3>
+        <div class="ctx">Trustworthy AI for conversational systems</div>
+        <ul>
+          <li>Architecture and risk audits of AI chatbots — system impact, integration risk, functional compliance within the application ecosystem.</li>
+          <li>Transposed industrial safety, ethics and auditability requirements to the AI model lifecycle (AI Risk Management).</li>
+          <li>Structured the Ground Truth and training metadata; rigorous attribute control to prevent model bias.</li>
+          <li>Built ingestion pipelines for massive unstructured data (PDF/PNG text extraction) feeding an NLP model.</li>
+          <li>National market study on agentic AI offerings; multi-role workshops to build a culture of trust around algorithms.</li>
+        </ul>
+        <div class="tools"><span class="chip">NLP</span><span class="chip">Risk Mgmt</span><span class="chip">Ground Truth</span></div>
+      </div>
+
+      <div class="mission">
+        <div class="m-id">m.05 · Strategic Analytics</div>
+        <h3>Data Strategy &amp; Decision Analytics</h3>
+        <div class="ctx">Turning business challenges into decision-ready assets</div>
+        <ul>
+          <li>End-to-end stewardship of a global KPI dictionary standardizing calculation rules across the organization.</li>
+          <li>Advanced Power BI reporting — interactive world maps, granular Crop Analytics segmentation, dynamic performance matrices.</li>
+          <li>Translated complex business challenges into clear analytical requirements, delivering dashboards directly usable for strategic decisions.</li>
+          <li>ROI-driven evaluation of data suppliers and data-asset valorization roadmaps.</li>
+        </ul>
+        <div class="tools"><span class="chip">Power BI</span><span class="chip">KPI Design</span><span class="chip">Data Storytelling</span></div>
+      </div>
+
+      <div class="mission">
+        <div class="m-id">m.06 · People &amp; Culture</div>
+        <h3>Training &amp; Data Culture</h3>
+        <div class="ctx">Adoption is where governance succeeds</div>
+        <ul>
+          <li>Designed and ran the Data Day for OCP engineers — workshops, quizzes and educational kits.</li>
+          <li>Built training plans for business and technical teams on ML/AI, data governance and data quality.</li>
+          <li>Led a team of data consultants — planning, task allocation, deliverable quality and technical reviews.</li>
+          <li>Knowledge transfer on data governance practices and applied AI fundamentals.</li>
+        </ul>
+        <div class="tools"><span class="chip">Team Lead</span><span class="chip">Data Day</span><span class="chip">Training</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><h2>Industrial <span class="accent">experience</span></h2><span class="sec-tag">// OT · systems</span></div>
+    <p class="lead">Where the data comes from — hands-on plant and systems work behind the KPIs.</p>
+    <div class="xp" style="margin-top:26px">
+      <div class="xp-item">
+        <div class="xp-head">
+          <h3>Data &amp; Industrial Consultant — <span class="org">AKUMENIA (Akumen IA by Valyans) · OCP Group</span></h3>
+          <span class="when">2025 – Present</span>
+        </div>
+        <ul>
+          <li>All six mission domains above, delivered for the RDP business unit (JPH, IROC, RDP, CDP programs).</li>
+        </ul>
+      </div>
+      <div class="xp-item">
+        <div class="xp-head">
+          <h3>Automation Engineering Intern — <span class="org">Yazaki (YMOK), NYS Department</span></h3>
+          <span class="when">Mar – Sep 2024</span>
+        </div>
+        <ul>
+          <li>Designed and deployed the plant's first tugging train (TTG) logistics tracking system, improving distribution line efficiency.</li>
+          <li>Python application for distributor tracking and data collection; ordering process via SAP ERP; scanning station and real-time Power BI dashboard.</li>
+        </ul>
+      </div>
+      <div class="xp-item">
+        <div class="xp-head">
+          <h3>Engineering Intern — <span class="org">NOVACIM</span></h3>
+          <span class="when">Jul – Sep 2023</span>
+        </div>
+        <ul>
+          <li>Technical studies and design of a fly-ash storage silo for the cement plant, with industrial planning analysis.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>Core <span class="accent">competencies</span></h2><span class="sec-tag">// stack</span></div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 26px;margin-top:26px">
+      <div class="skillrow"><div class="name">Data Governance</div><div>Data Governance · Data Quality · Metadata Management · Data Lifecycle · Data Dictionary · Lineage · Cataloging</div></div>
+      <div class="skillrow"><div class="name">Analytics &amp; Engineering</div><div>Python · SQL · Power BI · Tableau · APIs · Data Pipelines · Drift Monitoring · Predictive Modeling (ETA, RO)</div></div>
+      <div class="skillrow"><div class="name">Platforms</div><div>Collibra · Data Galaxy · SAP · Creatio · PiVision</div></div>
+      <div class="skillrow"><div class="name">Industrial Automation</div><div>PLC/HMI (Siemens, Allen-Bradley) · SCADA · Instrumentation · AutoCAD · Systems simulation</div></div>
+      <div class="skillrow"><div class="name">Leadership</div><div>Team leadership · Training delivery · Data storytelling · Stakeholder alignment · Problem-solving</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><h2>Education &amp; <span class="accent">certifications</span></h2><span class="sec-tag">// emsi</span></div>
+    <div class="grid3" style="margin-top:26px">
+      <div class="card"><h3>Engineering Degree</h3><p>Automation and Industrial IT — EMSI, Marrakech (2021–2024)</p></div>
+      <div class="card"><h3>Technician Diploma</h3><p>Electromechanics of Automated Systems — ISTA, Laâyoune (2018–2021)</p></div>
+      <div class="card"><h3>Certifications</h3><p>Solar Energy &amp; Electrical System Design · Electrical Power Systems · The 3D Printing Revolution · Data Visualization with Power BI · Python for Data Analysis</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>Get in <span class="accent">touch</span></h2><span class="sec-tag">// open_to_opportunities</span></div>
+    <p class="lead" style="margin-top:20px">
+      Open to data governance, data quality, data engineering and AI governance roles in Morocco, the Gulf and Europe.
+    </p>
+    <a class="btn" href="mailto:dayef-dayef@hotmail.com" style="margin-top:0">Email me</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © 2026 Abdelmonim Dayef · Casablanca, Morocco ·
+    <a href="https://www.linkedin.com/in/abdelmonim-dayef-214902239" target="_blank" rel="noopener">LinkedIn</a> ·
+    <a href="mailto:dayef-dayef@hotmail.com">dayef-dayef@hotmail.com</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var c = document.getElementById('net'), ctx = c.getContext('2d');
+  var nodes = [], W, H, N;
+  function resize(){
+    W = c.width = c.offsetWidth; H = c.height = c.offsetHeight;
+    N = Math.min(90, Math.floor(W*H/16000));
+    nodes = [];
+    for(var i=0;i<N;i++){
+      nodes.push({x:Math.random()*W, y:Math.random()*H,
+        vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35,
+        r:1.2+Math.random()*2, ph:Math.random()*Math.PI*2});
+    }
+  }
+  function step(t){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<nodes.length;i++){
+      var n = nodes[i];
+      n.x += n.vx; n.y += n.vy;
+      if(n.x<0||n.x>W) n.vx*=-1;
+      if(n.y<0||n.y>H) n.vy*=-1;
+      var glow = .45 + .55*Math.sin(t/900 + n.ph);
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 6.283);
+      ctx.fillStyle = 'rgba(45,217,201,'+(.25+.45*glow)+')'; ctx.fill();
+      for(var j=i+1;j<nodes.length;j++){
+        var m = nodes[j], dx = n.x-m.x, dy = n.y-m.y, d = Math.sqrt(dx*dx+dy*dy);
+        if(d < 130){
+          ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(m.x,m.y);
+          ctx.strokeStyle = 'rgba(140,190,255,'+(.16*(1-d/130))+')';
+          ctx.lineWidth = 1; ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(step);
+  }
+  window.addEventListener('resize', resize);
+  resize(); requestAnimationFrame(step);
+})();
+</script>
+
+</body>
+</html>
