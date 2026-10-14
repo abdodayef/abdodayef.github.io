@@ -95,6 +95,17 @@
   .card h3{font-size:1.02rem;margin-bottom:8px}
   .card p{font-size:.9rem;color:var(--muted)}
 
+  /* ===== CV dropdown ===== */
+  .cv-drop{position:relative;display:inline-block;margin-top:30px}
+  .cv-btn{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:#fff;font-weight:700;padding:13px 26px;border-radius:10px;box-shadow:0 6px 20px rgba(15,181,166,.4);cursor:pointer;transition:transform .15s, background .15s}
+  .cv-btn:hover{background:#0CA394;transform:translateY(-2px)}
+  .cv-menu{position:absolute;top:calc(100% + 10px);left:0;min-width:270px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 44px rgba(2,25,63,.18);padding:8px;display:none;z-index:50}
+  .cv-drop.open .cv-menu{display:block;animation:drop .16s ease-out}
+  @keyframes drop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .cv-menu a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 14px;border-radius:8px;color:var(--ink);font-size:.92rem;font-weight:600}
+  .cv-menu a:hover{background:var(--navy-soft);text-decoration:none}
+  .cv-menu a .lang{font-family:var(--mono);font-size:.7rem;color:var(--teal);background:var(--teal-soft);border-radius:5px;padding:3px 8px;letter-spacing:.06em}
+  .cv-menu .hint{font-size:.75rem;color:var(--muted);padding:2px 14px 8px;font-weight:400}
   footer{background:var(--ink);color:#8FA0BC;padding:36px 0;font-size:.88rem;text-align:center}
   footer a{color:#BFD7FF}
 </style>
@@ -114,8 +125,19 @@
       <a href="tel:+212639662397">+212 6 39 66 23 97</a>
       <a href="https://www.linkedin.com/in/abdelmonim-dayef-214902239" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <a class="btn" href="https://base44.app/api/apps/6a3950dfdb9d19d0b53ede47/files/mp/public/6a3950dfdb9d19d0b53ede47/f592656f8_CV_Dayef_MiddleEast_EN.docx">Download CV</a>
-    <a class="btn ghost" href="mailto:dayef-dayef@hotmail.com">Get in touch</a>
+    <div class="cv-drop" id="cvDrop">
+      <button class="cv-btn" id="cvBtn" type="button" aria-haspopup="true" aria-expanded="false">
+        Download CV
+        <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L13 1" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="cv-menu" role="menu">
+        <div class="hint">Choose your preferred language</div>
+        <a role="menuitem" href="https://base44.app/api/apps/6a3950dfdb9d19d0b53ede47/files/mp/public/6a3950dfdb9d19d0b53ede47/e78aa4d9b_CV_Dayef_MiddleEast_EN.docx" download>English — International <span class="lang">EN</span></a>
+        <a role="menuitem" href="https://base44.app/api/apps/6a3950dfdb9d19d0b53ede47/files/mp/public/6a3950dfdb9d19d0b53ede47/7fb6b7e03_CV_Dayef_France_FR.docx" download>Français — France <span class="lang">FR</span></a>
+        <a role="menuitem" href="https://base44.app/api/apps/6a3950dfdb9d19d0b53ede47/files/mp/public/6a3950dfdb9d19d0b53ede47/20501a8f8_CV_Dayef_Maroc_FR.docx" download>Français — Maroc <span class="lang">FR·MA</span></a>
+      </div>
+    </div>
+    <a class="btn ghost" href="mailto:dayef-dayef@hotmail.com" style="margin-left:12px">Get in touch</a>
   </div>
 </header>
 
@@ -335,6 +357,20 @@
   }
   window.addEventListener('resize', resize);
   resize(); requestAnimationFrame(step);
+})();
+
+(function(){
+  var drop = document.getElementById('cvDrop');
+  var btn = document.getElementById('cvBtn');
+  if(!drop) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = drop.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(e){
+    if(!drop.contains(e.target)) drop.classList.remove('open');
+  });
 })();
 </script>
 
